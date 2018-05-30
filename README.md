@@ -1,5 +1,5 @@
 # Next Apollo AppSync
-A fork of [next-apollo] to work with AWS AppSync for SSR React Applications
+A fork of [next-apollo](https://github.com/adamsoffer/next-apollo) to work with AWS AppSync for SSR React Applications
 
 ## Installation
 
