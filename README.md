@@ -2,7 +2,10 @@
 A fork of [next-apollo] to work with AWS AppSync for SSR React Applications
 
 ## Installation
+
+```bash
 yarn add next-apollo-appsync
+```
 
 ## Documentation
 Create an Apollo configuration object (check out the Apollo Client API for more configuration options). Pass the configuration object to the withAppSyncData higher-order component and export the returned component.
