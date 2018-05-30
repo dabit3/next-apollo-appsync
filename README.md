@@ -32,7 +32,7 @@ const config = {
   },
 }
 
-export default withData(config)
+export default withAppSyncData(config)
 ```
 
 Inside your Next.js page, wrap your component with your exported higher order component.
