@@ -36,11 +36,38 @@ export default withData(config)
 Inside your Next.js page, wrap your component with your exported higher order component.
 
 ```js
-import withData from './withData'
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+import withData from '..withData'
 
-export default withData(props => (
-  <div>Hello World</div>
-))
+const query = gql`
+  query listTodos {
+    listTodos {
+      items {
+        id
+        name
+        completed
+      }
+    }
+  }
+`
+
+class Todos extends React.Component {
+  render() {
+    return <div>
+      <p>Hello World</p>
+    </div>
+  }
+}
+
+const TodosWithData = graphql(query, {
+  options: {
+    fetchPolicy: 'cache-and-network'
+  },
+  props: props => ({ todos: props.data.listTodos ? props.data.listTodos.items : [] })
+})(Todos)
+
+export default withData(TodosWithData)
 ```
 
 ## License
