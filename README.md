@@ -13,6 +13,8 @@ yarn add next-apollo-appsync
 Create an Apollo configuration object (check out the Apollo Client API for more configuration options). Pass the configuration object to the withAppSyncData higher-order component and export the returned component.
 
 ```js
+// withData.js
+
 import { withAppSyncData } from 'next-apollo-appsync'
 
 const config = {
@@ -40,7 +42,7 @@ Inside your Next.js page, wrap your component with your exported higher order co
 ```js
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
-import withData from '..withData'
+import withData from '../withData'
 
 const query = gql`
   query listTodos {
