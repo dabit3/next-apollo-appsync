@@ -1,5 +1,6 @@
 import { AWSAppSyncClient } from "aws-appsync";
 import fetch from 'node-fetch'
+import isFunction from 'lodash.isfunction'
 
 let apolloClient = null
 
@@ -23,7 +24,11 @@ function create(initialState, appsyncConfig) {
   return client;
 }
 
-export default function initApollo(initialState, appsyncConfig) {
+export default function initApollo(initialState, appsyncConfig, headers) {
+  if (isFunction(appsyncConfig)) {
+    appsyncConfig = appsyncConfig(headers)
+  }
+
   // Make sure to create a new client for every server-side request so that data
   // isn't shared between connections (which would be bad)
   if (!process.browser) {
