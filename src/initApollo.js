@@ -1,6 +1,6 @@
-import { AWSAppSyncClient, createAppSyncLink } from 'aws-appsync';
-import fetch from 'node-fetch';
-import { ApolloLink } from 'apollo-link';
+import { AWSAppSyncClient, createAppSyncLink } from "aws-appsync";
+import fetch from "node-fetch";
+import { ApolloLink } from "apollo-link";
 
 let apolloClient = null;
 
