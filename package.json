@@ -1,10 +1,11 @@
 {
-  "name": "next-apollo-appsync",
-  "version": "0.0.7",
+  "name": "@codelab/appsync",
+  "version": "0.0.1",
   "description": "Fork of next-apollo to enable AWS AppSync SSR Appsy",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "dev": "babel src --watch --out-dir dist"
   },
   "files": [
     "dist"
@@ -17,14 +18,25 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.4"
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-link-state": "^0.4.2",
     "aws-appsync": "^1.0.22",
+    "graphql-tag": "^2.10.1",
     "node-fetch": "^2.1.2",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.4.0"
+  },
+  "peerDependencies": {
+    "next": "^7.0.2"
   }
 }
